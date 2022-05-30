@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>REAL CHAT</title>
+</head>
+
+<body>
+<h1>Real-Chat</h1>
+
+<form action="/chat" method="post">
+    <div class="form-group">
+        <label for="sender">아이디</label>
+        <input type="text" id="sender" name="sender" placeholder="아이디">
+        <label for="message">메시지</label>
+        <input type="text" id="message" name="message" placeholder="메시지" maxlength="30" size="15">
+        <button type="submit">전송</button>
+    </div>
+</form>
+
+<div>
+    <table>
+        <thead>
+        <tr th:each="chatLog : ${chatLogs}">
+            <td th:text="${chatLog}">line</td>
+        </tr>
+        </thead>
+    </table>
+</div>
+
+<div id="chat_result">
+    <h3>Real-Chat Ranking</h3>
+    <li id="rank1">rank1</li>
+    <li id="rank2">rank2</li>
+    <li id="rank3">rank3</li>
+    <li id="rank4">rank4</li>
+    <li id="rank5">rank5</li>
+</div>
+
+</body>
+</html>
